@@ -36,8 +36,9 @@ inquirer.prompt (
         },
         {
             type: 'input',
-            message: "Licenses",
+            message: "License",
             name: 'License',
+            choice: ['Apache', 'MIT', 'Mozilla', 'GPL', 'GNU', 'N/A'],
             validate: (value) => {if(value){return true} else {return "Please enter info to continue, sillly."}},
         },
         {
@@ -61,8 +62,47 @@ inquirer.prompt (
         {
             type: 'input',
             message: "Email Address?",
-            name: 'Questions',
+            name: 'Quesitons',
             validate: (value) => {if(value){return true} else {return "Please enter info to continue, sillly."}},
         }
     ]
+).then(({
+    Title,
+    Description,
+    Table_of_Contents,
+    Installation,
+    Usage,
+    License,
+    Contributing,
+    Features,
+    Questions,
+}) => {
+const template = `* ${title}
+
+* [Description](#Description)
+* [Table of Contents](#Table of Contents)
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [License](#License)
+* [Contributing](#Contributing)
+* [Features](#Features)
+* [Questions](#Questions)
+
+## Desctiption
+${Description}
+## Table of Contents
+${Table_of_Contents}
+## Installation
+${Installation}
+## Usage
+${Usage}
+## License
+${License}
+## Contributing
+${Contributing}
+## Features
+${Features}
+## Questions
+* GitHub & Email ${Questions}`;
+}
 )
