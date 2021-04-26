@@ -104,5 +104,16 @@ ${Contributing}
 ${Features}
 ## Questions
 * GitHub & Email ${Questions}`;
+
+createNewFile(title, data);
+});
+
+function createNewFile(filename, template) {
+    fs.writeFile(`./${filename.toLowerCast().split(' ').join('')}.md`, data, (err) => {
+        if(err) {
+            console.log('error')
+        } else {
+            console.log("README.md file has been created!");
+        }
+    })
 }
-)
