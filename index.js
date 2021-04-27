@@ -56,13 +56,13 @@ inquirer.prompt (
         {
             type: 'input',
             message: "GitHub Profile Name?",
-            name: 'Questions',
+            name: 'GitHub',
             validate: (value) => {if(value){return true} else {return "Please enter info to continue, sillly."}},
         },
         {
             type: 'input',
             message: "Email Address?",
-            name: 'Quesitons',
+            name: 'Email',
             validate: (value) => {if(value){return true} else {return "Please enter info to continue, sillly."}},
         }
     ]
@@ -75,7 +75,8 @@ inquirer.prompt (
     License,
     Contributing,
     Features,
-    Questions,
+    GitHub,
+    Email,
 }) => {
 const template = `* ${Title}
 
@@ -86,7 +87,8 @@ const template = `* ${Title}
 * [License](#License)
 * [Contributing](#Contributing)
 * [Features](#Features)
-* [Questions](#Questions)
+* [GitHub](*GitHub)
+* [Email](*Email)
 
 ## Desctiption
 ${Description}
@@ -102,14 +104,16 @@ ${License}
 ${Contributing}
 ## Features
 ${Features}
-## Questions
-* GitHub & Email ${Questions}`;
+## GitHub
+${GitHub}
+## Email
+${Email}`;
 
 createNewFile(title, template);
 });
 
 function createNewFile(filename, template) {
-    fs.writeFile(`./${filename.toLowerCase().split(' ').join('')}.md`, template, (err) => {
+    fs.writeFile("README.md", template, (err) => {
         if(err) {
             console.log('error')
         } else {
