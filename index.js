@@ -19,7 +19,7 @@ inquirer.prompt (
         {
             type: 'input',
             message: "Table of Contents",
-            name: 'Table of Contents',
+            name: 'Table_of_Contents',
             validate: (value) => {if(value){return true} else {return "Please enter info to continue, sillly."}},
         },
         {
@@ -77,10 +77,10 @@ inquirer.prompt (
     Features,
     Questions,
 }) => {
-const template = `* ${title}
+const template = `* ${Title}
 
 * [Description](#Description)
-* [Table of Contents](#Table of Contents)
+* [Table_of_Contents](#Table_of_Contents)
 * [Installation](#Installation)
 * [Usage](#Usage)
 * [License](#License)
@@ -90,7 +90,7 @@ const template = `* ${title}
 
 ## Desctiption
 ${Description}
-## Table of Contents
+## Table_of_Contents
 ${Table_of_Contents}
 ## Installation
 ${Installation}
@@ -105,11 +105,11 @@ ${Features}
 ## Questions
 * GitHub & Email ${Questions}`;
 
-createNewFile(title, data);
+createNewFile(title, template);
 });
 
 function createNewFile(filename, template) {
-    fs.writeFile(`./${filename.toLowerCast().split(' ').join('')}.md`, data, (err) => {
+    fs.writeFile(`./${filename.toLowerCase().split(' ').join('')}.md`, template, (err) => {
         if(err) {
             console.log('error')
         } else {
