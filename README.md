@@ -43,7 +43,7 @@ You can use this to generate a README file from the command line. The package.js
 My GitHub handle is SirJKM. Drop by and check out my repos and give me a follow!
 
 ## Email
-jmanning2842@gmail.com for any questions or concerns.
+jasonkylemanning@gmail.com for any questions or concerns.
 
 ## Video Walk Through
 https://drive.google.com/file/d/1BjSHkWDiPTpXjl11Q1MCP0f877Z7w7sM/view
